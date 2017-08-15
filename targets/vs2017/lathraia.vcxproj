@@ -11,12 +11,22 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\source\Plasma\Platform\Window.cpp" />
+    <ClCompile Include="..\..\source\Plasma\Platform\Windows\WindowWin32.cpp" />
     <ClCompile Include="..\..\source\Plasma\Source.cpp" />
+    <ClCompile Include="..\..\source\Plasma\String.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\source\Plasma\Engine.h" />
+    <ClInclude Include="..\..\source\Plasma\Platform\Window.h" />
+    <ClInclude Include="..\..\source\Plasma\Platform\Windows\Win32ContextInfo.h" />
+    <ClInclude Include="..\..\source\Plasma\Platform\Windows\WindowWin32.h" />
+    <ClInclude Include="..\..\source\Plasma\PString.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{B242B230-F4AF-41EA-A618-8E1ED84D07E1}</ProjectGuid>
-    <RootNamespace>kinema</RootNamespace>
+    <RootNamespace>plasma</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
     <ProjectName>Plasma</ProjectName>
   </PropertyGroup>
@@ -48,12 +58,12 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <OutDir>$(SolutionDir)binaries\$(Configuration)\</OutDir>
-    <IntDir>$(SolutionDir)temp\$(ProjectName)$(Configuration)_$(Platform)</IntDir>
+    <IntDir>$(SolutionDir)temp\$(ProjectName)$(Configuration)_$(Platform)\</IntDir>
     <TargetName>$(ProjectName)_$(Platform)</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <OutDir>$(SolutionDir)binaries\$(Configuration)\</OutDir>
-    <IntDir>$(SolutionDir)temp\$(ProjectName)_$(Configuration)_$(Platform)</IntDir>
+    <IntDir>$(SolutionDir)temp\$(ProjectName)$(Configuration)_$(Platform)\</IntDir>
     <TargetName>$(ProjectName)_$(Platform)</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -61,11 +71,12 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>$(SolutionDir)include/</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)source\Plasma;$(SolutionDir)source\Renderer;$(SolutionDir)source\RendererGL;$(SolutionDir)dependencies\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>PLATFORM_WINDOWS;PLASMA_DEBUG;GLEW_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>$(SolutionDir)dependencies\</AdditionalLibraryDirectories>
-      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>$(SolutionDir)binaries\Debug\Renderer_x64.lib;$(SolutionDir)binaries\Debug\RendererGL_x64.lib;opengl32.lib;$(SolutionDir)dependencies\Debug\glew32sd.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -75,13 +86,14 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>$(SolutionDir)include/</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)source\Plasma;$(SolutionDir)source\Renderer;$(SolutionDir)dependencies\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>PLATFORM_WINDOWS;PLASMA_RELEASE;GLEW_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <AdditionalLibraryDirectories>$(SolutionDir)dependencies\</AdditionalLibraryDirectories>
-      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>opengl32.lib;$(SolutionDir)dependencies\Debug\glew32s.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

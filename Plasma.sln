@@ -1,11 +1,20 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.14
+VisualStudioVersion = 15.0.26430.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Plasma", "targets\vs2017\lathraia.vcxproj", "{B242B230-F4AF-41EA-A618-8E1ED84D07E1}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C953E84D-830A-4A05-8A28-D87B730CB6DC} = {C953E84D-830A-4A05-8A28-D87B730CB6DC}
+		{C93556FB-FD42-4F1D-BA6E-338E4FACEA2A} = {C93556FB-FD42-4F1D-BA6E-338E4FACEA2A}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Renderer", "targets\vs2017\renderer.vcxproj", "{C93556FB-FD42-4F1D-BA6E-338E4FACEA2A}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RendererGL", "targets\vs2017\rendererGL.vcxproj", "{C953E84D-830A-4A05-8A28-D87B730CB6DC}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C93556FB-FD42-4F1D-BA6E-338E4FACEA2A} = {C93556FB-FD42-4F1D-BA6E-338E4FACEA2A}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +30,10 @@ Global
 		{C93556FB-FD42-4F1D-BA6E-338E4FACEA2A}.Debug|x64.Build.0 = Debug|x64
 		{C93556FB-FD42-4F1D-BA6E-338E4FACEA2A}.Release|x64.ActiveCfg = Release|x64
 		{C93556FB-FD42-4F1D-BA6E-338E4FACEA2A}.Release|x64.Build.0 = Release|x64
+		{C953E84D-830A-4A05-8A28-D87B730CB6DC}.Debug|x64.ActiveCfg = Debug|x64
+		{C953E84D-830A-4A05-8A28-D87B730CB6DC}.Debug|x64.Build.0 = Debug|x64
+		{C953E84D-830A-4A05-8A28-D87B730CB6DC}.Release|x64.ActiveCfg = Release|x64
+		{C953E84D-830A-4A05-8A28-D87B730CB6DC}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="..\..\source\Plasma\Source.cpp" />
+    <ClCompile Include="..\..\source\Plasma\Platform\Window.cpp">
+      <Filter>Platform</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\Plasma\Platform\Windows\WindowWin32.cpp">
+      <Filter>Platform\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\Plasma\String.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Platform">
+      <UniqueIdentifier>{f0adf58c-26ea-4e32-bc5f-c65204bbf5e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform\Windows">
+      <UniqueIdentifier>{14795006-8509-49ad-805d-2391e7dd42fd}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\source\Plasma\Platform\Window.h">
+      <Filter>Platform</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\Plasma\Platform\Windows\WindowWin32.h">
+      <Filter>Platform\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\Plasma\Engine.h" />
+    <ClInclude Include="..\..\source\Plasma\Platform\Windows\Win32ContextInfo.h">
+      <Filter>Platform\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\Plasma\PString.h" />
+  </ItemGroup>
+</Project>
