@@ -7,6 +7,8 @@
 
 float rt = 0.0f;
 
+GLuint texture;
+
 void Update()
 {
 }
@@ -19,23 +21,30 @@ void Render()
 
 
 	glRotatef(rt, 0, 0, 1);
+	glScalef(0.5f, 0.5f, 0.5f);
 	rt += 0.5f;
 
-	glBegin(GL_TRIANGLES);
 
-	glVertex3f(-0.5f, -0.5f, 0.0f);//triangle one first vertex
-	glColor3f(1, 0, 0);
+	glBindTexture(GL_TEXTURE_2D, texture);
 
-	glVertex3f(0, 0.5, 0.0f);//triangle one second vertex
-	glColor3f(0, 1, 0);
+	glBegin(GL_TRIANGLE_STRIP);
 
-	glVertex3f(0.5, -0.5, 0.0f);//triangle one third vertex
-	glColor3f(0, 0, 1);
+	float rp = 4;
 
+	glTexCoord2f(0.0, 0.0);
+	glVertex2f(-1.0, -1.0);
+
+	glTexCoord2f(rp, 0.0);
+	glVertex2f(1.0, -1.0);
+
+	glTexCoord2f(0.0, rp);
+	glVertex2f(-1.0, 1.0);
+
+	glTexCoord2f(rp, rp);
+	glVertex2f(1.0, 1.0);
 
 	glEnd();
 
-	
 }
 int main()
 {
@@ -48,7 +57,28 @@ int main()
 	Renderer* r = new RendererGL();
 	r->Initialize(window.GetWindowHandle());
 
+	glEnable(GL_TEXTURE_2D);
 	glClearColor(0.05, 0.05, 0.05, 1);
+
+
+
+	// tex
+
+	glGenTextures(1, &texture);
+	glBindTexture(GL_TEXTURE_2D, texture);
+
+	GLubyte tdx[] = {
+		0, 0, 0, 255 ,       255, 0, 255, 255,
+		255, 0, 255, 255,     0, 0, 0, 255
+	};
+	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB8, 2, 2, 0, GL_RGBA, GL_UNSIGNED_BYTE, tdx);
+
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+
+	// en
 
 	while (true)
 	{

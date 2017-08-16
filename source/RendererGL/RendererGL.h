@@ -11,6 +11,7 @@ public: // TEMP
 public:
 	void Initialize(void* windowHandle);
 
+	Texture* CreateTexture();
 
 	~RendererGL();
 };

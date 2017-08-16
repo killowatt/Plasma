@@ -9,6 +9,7 @@ typedef WinGLContext PlatformContext;
 typedef MacOSContext PlatformContext;
 #endif
 
+#include "TextureGL.h"
 #include "GL/glew.h"
 
 void RendererGL::Initialize(void* windowHandle)
@@ -24,6 +25,14 @@ void RendererGL::Initialize(void* windowHandle)
 	// temp 
 	std::cout << "Hello from GL\n";
 	Renderer::Initialize(windowHandle);
+}
+
+Texture* RendererGL::CreateTexture()
+{
+	TextureGL* texture = new TextureGL();
+
+
+	return texture;
 }
 
 RendererGL::~RendererGL()

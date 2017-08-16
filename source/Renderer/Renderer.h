@@ -1,5 +1,7 @@
 #pragma once
+#include "Texture.h"
 
+// TODO: remove
 #include <iostream>
 
 class Renderer
@@ -9,4 +11,6 @@ public:
 	{
 		std::cout << "Hello from interface!\n";
 	}
+
+	virtual Texture* CreateTexture() = 0;
 };

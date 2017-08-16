@@ -14,11 +14,13 @@
     <ClInclude Include="..\..\source\RendererGL\Platform\Context.h" />
     <ClInclude Include="..\..\source\RendererGL\Platform\Windows\WinGLContext.h" />
     <ClInclude Include="..\..\source\RendererGL\RendererGL.h" />
+    <ClInclude Include="..\..\source\RendererGL\TextureGL.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\source\RendererGL\Platform\Context.cpp" />
     <ClCompile Include="..\..\source\RendererGL\Platform\Windows\WinGLContext.cpp" />
     <ClCompile Include="..\..\source\RendererGL\RendererGL.cpp" />
+    <ClCompile Include="..\..\source\RendererGL\TextureGL.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
@@ -68,7 +70,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>$(SolutionDir)source\RendererGL;$(SolutionDir)source\Renderer;$(SolutionDir)dependencies\Include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)source\RendererGL;$(SolutionDir)source\Renderer;$(SolutionDir)source\Plasma;$(SolutionDir)dependencies\Include</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>PLATFORM_WINDOWS;PLASMA_DEBUG;GLEW_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
@@ -83,7 +85,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>$(SolutionDir)source\RendererGL;$(SolutionDir)dependencies\Include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)source\RendererGL;$(SolutionDir)source\Renderer;$(SolutionDir)source\Plasma;$(SolutionDir)dependencies\Include</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>PLATFORM_WINDOWS;GLEW_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
