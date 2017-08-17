@@ -29,9 +29,26 @@ void RendererGL::Initialize(void* windowHandle)
 
 Texture* RendererGL::CreateTexture()
 {
-	TextureGL* texture = new TextureGL();
+	uint32 textureID;
+	glGenTextures(1, &textureID);
+	glBindTexture(GL_TEXTURE_2D, textureID);
+
+	// Empty Texture
+	GLubyte image[] = {
+		0, 0, 0, 255,
+		255, 0, 255, 255,
+		255, 0, 255, 255,  
+		0, 0, 0, 255
+	};
+	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB8, 2, 2, 0, GL_RGBA, GL_UNSIGNED_BYTE, image); // TODO:v
+
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST); // TODO: use set in tex
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
 
 
+	TextureGL* texture = new TextureGL(this, textureID);
 	return texture;
 }
 

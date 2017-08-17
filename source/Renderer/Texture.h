@@ -7,4 +7,7 @@ public:
 
 	virtual void* GetBaseTexture() = 0;
 
+	virtual void ENABLETEX() {} // TODO: temporary!
+
+	Texture() {}
 };
