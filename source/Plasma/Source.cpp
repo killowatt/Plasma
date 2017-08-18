@@ -21,6 +21,7 @@ void Render()
 
 
 	glRotatef(rt, 0, 0, 1);
+	glRotatef(rt, 1, 0, 0);
 	glScalef(0.5f, 0.5f, 0.5f);
 	rt += 0.5f;
 
@@ -62,7 +63,7 @@ int main()
 
 
 	texd = r->CreateTexture();
-	
+	texd->SetFiltering(TextureFilter::AnisotropicNearest, 16.0f);
 
 
 	// tex

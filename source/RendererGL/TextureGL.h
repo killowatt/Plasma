@@ -11,10 +11,11 @@ class TextureGL : public Texture
 public:
 	const uint32 GetTextureID() const { return TextureID; }
 
-	void SetTexture() {} // using IMAGE class (tbd)!
-	void SetFiltering() {} // tbd
+	void SetTexture(); // using IMAGE class (tbd)!
+	void SetFiltering(TextureFilter filter, float anisotropicLevel) override; // tbd
+	//void SetFiltering(TextureFilter filter
 
-	void* GetBaseTexture() override final
+	void* GetBaseTexture() override final // TODO: who in their right mind would inherit
 	{
 		return static_cast<TextureGL*>(this);
 	}

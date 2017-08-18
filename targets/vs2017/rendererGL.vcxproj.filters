@@ -17,6 +17,7 @@
     </ClInclude>
     <ClInclude Include="..\..\source\RendererGL\RendererGL.h" />
     <ClInclude Include="..\..\source\RendererGL\TextureGL.h" />
+    <ClInclude Include="..\..\source\RendererGL\PlatformGL.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\source\RendererGL\Platform\Windows\WinGLContext.cpp">
@@ -27,5 +28,6 @@
       <Filter>Platform</Filter>
     </ClCompile>
     <ClCompile Include="..\..\source\RendererGL\TextureGL.cpp" />
+    <ClCompile Include="..\..\source\RendererGL\PlatformGL.cpp" />
   </ItemGroup>
 </Project>

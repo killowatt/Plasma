@@ -11,12 +11,14 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\source\RendererGL\PlatformGL.h" />
     <ClInclude Include="..\..\source\RendererGL\Platform\Context.h" />
     <ClInclude Include="..\..\source\RendererGL\Platform\Windows\WinGLContext.h" />
     <ClInclude Include="..\..\source\RendererGL\RendererGL.h" />
     <ClInclude Include="..\..\source\RendererGL\TextureGL.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\source\RendererGL\PlatformGL.cpp" />
     <ClCompile Include="..\..\source\RendererGL\Platform\Context.cpp" />
     <ClCompile Include="..\..\source\RendererGL\Platform\Windows\WinGLContext.cpp" />
     <ClCompile Include="..\..\source\RendererGL\RendererGL.cpp" />

@@ -9,6 +9,7 @@ typedef WinGLContext PlatformContext;
 typedef MacOSContext PlatformContext;
 #endif
 
+#include "PlatformGL.h"
 #include "TextureGL.h"
 #include "GL/glew.h"
 
@@ -21,6 +22,10 @@ void RendererGL::Initialize(void* windowHandle)
 	if (GLEW_OK != error)
 		return;
 
+
+
+	// maybe
+	PlatformGL::PopulateExtensions();
 
 	// temp 
 	std::cout << "Hello from GL\n";
@@ -35,12 +40,13 @@ Texture* RendererGL::CreateTexture()
 
 	// Empty Texture
 	GLubyte image[] = {
-		0, 0, 0, 255,
-		255, 0, 255, 255,
-		255, 0, 255, 255,  
-		0, 0, 0, 255
+		240, 0, 150, 255,
+		15, 0, 150, 255,
+		15, 0, 150, 255,
+		240, 0, 150, 255,
 	};
 	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB8, 2, 2, 0, GL_RGBA, GL_UNSIGNED_BYTE, image); // TODO:v
+	glGenerateMipmap(GL_TEXTURE_2D); // ALWAYS, or provide  mipmap.
 
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST); // TODO: use set in tex
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
