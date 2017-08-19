@@ -5,6 +5,9 @@
 #include "RendererGL.h"
 #include "GL/glew.h"
 
+
+#include "Vulkan.h"
+
 float rt = 0.0f;
 
 Texture* texd;
@@ -49,6 +52,19 @@ void Render()
 }
 int main()
 {
+
+
+	VulkanTest test;
+	test.Initialize();
+
+
+	std::cout << "Ending Vulkan Test; Further is OPENGL\n";
+	std::getchar();
+
+
+
+
+
 
 
 

@@ -71,12 +71,12 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>$(SolutionDir)source\Plasma;$(SolutionDir)source\Renderer;$(SolutionDir)source\RendererGL;$(SolutionDir)dependencies\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)source\Plasma;$(SolutionDir)source\Renderer;$(SolutionDir)source\RendererGL;$(SolutionDir)source\RendererVK;$(SolutionDir)dependencies\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>PLATFORM_WINDOWS;PLASMA_DEBUG;GLEW_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>$(SolutionDir)dependencies\</AdditionalLibraryDirectories>
-      <AdditionalDependencies>$(SolutionDir)binaries\Debug\Renderer_x64.lib;$(SolutionDir)binaries\Debug\RendererGL_x64.lib;opengl32.lib;$(SolutionDir)dependencies\Debug\glew32sd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>$(SolutionDir)binaries\Debug\Renderer_x64.lib;$(SolutionDir)binaries\Debug\RendererGL_x64.lib;$(SolutionDir)binaries\Debug\RendererVK_x64.lib;opengl32.lib;$(SolutionDir)dependencies\Debug\glew32sd.lib;$(SolutionDir)dependencies\vulkan-1.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
