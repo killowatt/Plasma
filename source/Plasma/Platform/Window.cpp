@@ -15,7 +15,7 @@ void Window::Update()
 		platformWindow->Update();
 }
 
-Window::Window() : Window("Daedalus", 1280, 720) {}
+Window::Window() : Window("Plasma", 1280, 720) {}
 Window::Window(const char* title, int width, int height)
 {
 	platformWindow = new SystemWindow(title, width, height);
