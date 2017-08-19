@@ -16,7 +16,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RendererGL", "targets\vs201
 		{C93556FB-FD42-4F1D-BA6E-338E4FACEA2A} = {C93556FB-FD42-4F1D-BA6E-338E4FACEA2A}
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RendererVK", "targets\vs2017\RendererVK\RendererVK.vcxproj", "{17369208-46A0-442E-9B80-75C6242BB0E3}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RendererVK", "targets\vs2017\rendererVK.vcxproj", "{9A1FC246-35E4-4435-8299-ABAD3B34C94A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -44,14 +44,12 @@ Global
 		{C953E84D-830A-4A05-8A28-D87B730CB6DC}.Release|x64.ActiveCfg = Release|x64
 		{C953E84D-830A-4A05-8A28-D87B730CB6DC}.Release|x64.Build.0 = Release|x64
 		{C953E84D-830A-4A05-8A28-D87B730CB6DC}.Release|x86.ActiveCfg = Release|x64
-		{17369208-46A0-442E-9B80-75C6242BB0E3}.Debug|x64.ActiveCfg = Debug|x64
-		{17369208-46A0-442E-9B80-75C6242BB0E3}.Debug|x64.Build.0 = Debug|x64
-		{17369208-46A0-442E-9B80-75C6242BB0E3}.Debug|x86.ActiveCfg = Debug|Win32
-		{17369208-46A0-442E-9B80-75C6242BB0E3}.Debug|x86.Build.0 = Debug|Win32
-		{17369208-46A0-442E-9B80-75C6242BB0E3}.Release|x64.ActiveCfg = Release|x64
-		{17369208-46A0-442E-9B80-75C6242BB0E3}.Release|x64.Build.0 = Release|x64
-		{17369208-46A0-442E-9B80-75C6242BB0E3}.Release|x86.ActiveCfg = Release|Win32
-		{17369208-46A0-442E-9B80-75C6242BB0E3}.Release|x86.Build.0 = Release|Win32
+		{9A1FC246-35E4-4435-8299-ABAD3B34C94A}.Debug|x64.ActiveCfg = Debug|x64
+		{9A1FC246-35E4-4435-8299-ABAD3B34C94A}.Debug|x64.Build.0 = Debug|x64
+		{9A1FC246-35E4-4435-8299-ABAD3B34C94A}.Debug|x86.ActiveCfg = Debug|x64
+		{9A1FC246-35E4-4435-8299-ABAD3B34C94A}.Release|x64.ActiveCfg = Release|x64
+		{9A1FC246-35E4-4435-8299-ABAD3B34C94A}.Release|x64.Build.0 = Release|x64
+		{9A1FC246-35E4-4435-8299-ABAD3B34C94A}.Release|x86.ActiveCfg = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
