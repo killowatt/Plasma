@@ -56,7 +56,7 @@ int main()
 
 	VulkanTest test;
 	test.Initialize();
-
+	test.Destroy();
 
 	std::cout << "Ending Vulkan Test; Further is OPENGL\n";
 	std::getchar();
